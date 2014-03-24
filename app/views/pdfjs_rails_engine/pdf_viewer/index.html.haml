@@ -48,6 +48,12 @@
           %span{"data-l10n-id" => "page_rotate_cw_label"} Rotate Clockwise
         %button#pageRotateCcw.secondaryToolbarButton.rotateCcw{"data-l10n-id" => "page_rotate_ccw", tabindex: "26", title: "Rotate Counterclockwise"}
           %span{"data-l10n-id" => "page_rotate_ccw_label"} Rotate Counterclockwise
+        .horizontalToolbarSeparator
+        %button#toggleHandTool.secondaryToolbarButton.handTool{"data-l10n-id" => "hand_tool_enable", tabindex: "27", title: "Enable hand tool"}
+          %span{"data-l10n-id" => "hand_tool_enable_label"} Enable hand tool
+        .horizontalToolbarSeparator
+        %button#documentProperties.secondaryToolbarButton.documentProperties{"data-l10n-id" => "document_properties", tabindex: "28", title: "Document Properties…"}
+          %span{"data-l10n-id" => "document_properties_label"} Document Properties…
     / secondaryToolbar
     .toolbar
       #toolbarContainer
@@ -127,17 +133,61 @@
       %textarea#errorMoreInfo{hidden: "true", readonly: "readonly"}
   / mainContainer
   #overlayContainer.hidden
-    #promptContainer
+    #promptContainer.hidden
       #passwordContainer.prompt.doorHanger
         .row
           %p#passwordText{"data-l10n-id" => "password_label"} Enter the password to open this PDF file:
         .row
           %input#password.toolbarField{type: "password"}/
-        .row
-          %button#passwordCancel.promptButton
+        .buttonRow
+          %button#passwordCancel.overlayButton
             %span{"data-l10n-id" => "password_cancel"} Cancel
-          %button#passwordSubmit.promptButton
+          %button#passwordSubmit.overlayButton
             %span{"data-l10n-id" => "password_ok"} OK
+    #documentPropertiesContainer.hidden
+      .doorHanger
+        .row
+          %span{"data-l10n-id" => "document_properties_file_name"} File name:
+          %p#fileNameField -
+        .row
+          %span{"data-l10n-id" => "document_properties_file_size"} File size:
+          %p#fileSizeField -
+        .separator
+        .row
+          %span{"data-l10n-id" => "document_properties_title"} Title:
+          %p#titleField -
+        .row
+          %span{"data-l10n-id" => "document_properties_author"} Author:
+          %p#authorField -
+        .row
+          %span{"data-l10n-id" => "document_properties_subject"} Subject:
+          %p#subjectField -
+        .row
+          %span{"data-l10n-id" => "document_properties_keywords"} Keywords:
+          %p#keywordsField -
+        .row
+          %span{"data-l10n-id" => "document_properties_creation_date"} Creation Date:
+          %p#creationDateField -
+        .row
+          %span{"data-l10n-id" => "document_properties_modification_date"} Modification Date:
+          %p#modificationDateField -
+        .row
+          %span{"data-l10n-id" => "document_properties_creator"} Creator:
+          %p#creatorField -
+        .separator
+        .row
+          %span{"data-l10n-id" => "document_properties_producer"} PDF Producer:
+          %p#producerField -
+        .row
+          %span{"data-l10n-id" => "document_properties_version"} PDF Version:
+          %p#versionField -
+        .row
+          %span{"data-l10n-id" => "document_properties_page_count"} Page Count:
+          %p#pageCountField -
+        .buttonRow
+          %button#documentPropertiesClose.overlayButton
+            %span{"data-l10n-id" => "document_properties_close"} Close
+  / overlayContainer
 / outerContainer
 #printContainer
 #mozPrintCallback-shim{hidden: ""}
