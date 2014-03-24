@@ -15,5 +15,5 @@ Instructions:
 
 To do:
   Add l10n resources of the pdf.js repo
-  Minify all the js libraries (Only pdf.js and pdf.worker.js are minified)
+  Minify all the js libraries
   Allow pdf viewer to access remote urls
